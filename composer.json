@@ -1,0 +1,45 @@
+{
+    "name": "arkaitzgarro/erpdataio",
+    "description": "ERPDataIO is a brigde to import/export data from ERP systems into Elcodi projects",
+    "type": "library",
+    "keywords": ["erp", "import", "export", "elcodi"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arkaitz Garro",
+            "email": "arkaitz.garro@gmail.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://github.com/PaymentSuite/paymentsuite/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/framework-bundle": "~2.4.0",
+        "symfony/config": ">=2.2.3",
+        "symfony/http-kernel": ">=2.2.3",
+        "symfony/dependency-injection": ">=2.2.3",
+        "elcodi/elcodi": "v0.1.11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "replace": {
+        
+    },
+    "suggest": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "ERPDataIO\\": "src/ERPDataIO"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
