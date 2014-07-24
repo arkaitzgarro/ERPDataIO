@@ -1,2 +1,2 @@
-ERPDataIO
-=========
+ERPDataIO for Elcodi
+====================
