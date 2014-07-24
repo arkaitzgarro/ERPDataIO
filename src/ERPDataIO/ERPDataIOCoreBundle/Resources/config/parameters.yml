@@ -1,0 +1,3 @@
+parameters:
+
+    erpdataio.logger.class: "ERPDataIO\\ERPDataIOCoreBundle\\Services\\ERPDataIOLogger"

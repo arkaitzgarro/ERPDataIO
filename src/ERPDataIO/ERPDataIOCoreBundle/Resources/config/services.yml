@@ -1,0 +1,10 @@
+services:
+
+    erpdataio.logger:
+        class: %erpdataio.logger.class%
+        arguments:
+            logger: @logger
+            active: %erpdataio.logger.active%
+            level: %erpdataio.logger.level%
+        tags:
+            - { name: monolog.logger, channel: 'erpdataio' }
