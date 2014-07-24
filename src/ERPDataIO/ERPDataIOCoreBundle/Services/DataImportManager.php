@@ -16,9 +16,9 @@ namespace ERPDataIO\ERPDataIOCoreBundle\Services;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
- * Data importer manager
+ * Data import manager
  */
-class DataImporterManager
+class DataImportManager
 {
     /**
      * Entity manager
