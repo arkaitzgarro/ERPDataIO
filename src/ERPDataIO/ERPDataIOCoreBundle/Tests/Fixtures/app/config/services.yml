@@ -1,0 +1,6 @@
+services:
+    logger:
+        class: Monolog\Logger
+        arguments: ['default.logger']
+        call:
+            - [pushHandler, [@console_handler]]

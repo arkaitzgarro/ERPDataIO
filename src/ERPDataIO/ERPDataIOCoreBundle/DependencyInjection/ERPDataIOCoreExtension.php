@@ -17,6 +17,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -41,5 +42,14 @@ class ERPDataIOCoreExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('parameters.yml');
         $loader->load('services.yml');
+
+        try {
+            $env = $container->getParameter("kernel.environment");
+            if ($env === 'test') {
+                $loader->load('services_test.yml');
+            }
+        } catch(ParameterNotFoundException $ex) {
+
+        }
     }
 }
