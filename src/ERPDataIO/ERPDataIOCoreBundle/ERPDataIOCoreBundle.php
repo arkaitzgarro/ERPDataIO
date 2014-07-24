@@ -13,8 +13,6 @@
 
 namespace ERPDataIO\ERPDataIOCoreBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
 /**
  * This class define all events thrown by all import/export methods
  */
