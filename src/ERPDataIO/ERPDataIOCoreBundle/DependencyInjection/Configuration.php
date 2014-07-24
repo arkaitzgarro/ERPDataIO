@@ -51,7 +51,7 @@ class Configuration implements ConfigurationInterface
                             ->defaultValue('json')
                         ->end()
                     ->end()
-                ->end();
+                ->end()
                 ->arrayNode('output')
                     ->addDefaultsIfNotSet()
                     ->children()
@@ -59,7 +59,7 @@ class Configuration implements ConfigurationInterface
                             ->defaultValue('json')
                         ->end()
                     ->end()
-                ->end();
+                ->end()
             ->end();
 
         return $treeBuilder;

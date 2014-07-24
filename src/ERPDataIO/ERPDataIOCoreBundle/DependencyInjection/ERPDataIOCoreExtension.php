@@ -13,10 +13,10 @@
 
 namespace ERPDataIO\ERPDataIOCoreBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -35,6 +35,8 @@ class ERPDataIOCoreExtension extends Extension
 
         $container->setParameter('erpdataio.logger.active', $config['logger']['active']);
         $container->setParameter('erpdataio.logger.level', $config['logger']['level']);
+        $container->setParameter('erpdataio.input.data_format', $config['input']['data_format']);
+        $container->setParameter('erpdataio.output.data_format', $config['output']['data_format']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('parameters.yml');

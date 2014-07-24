@@ -20,10 +20,12 @@
         "symfony/config": ">=2.2.3",
         "symfony/http-kernel": ">=2.2.3",
         "symfony/dependency-injection": ">=2.2.3",
-        "elcodi/elcodi": "v0.1.11"
+        "raulfraile/ladybug-bundle": "dev-master",
+        "elcodi/product-bundle": "~0.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "matthiasnoback/symfony-dependency-injection-test": "0.*"
     },
     "replace": {
 	    "arkaitzgarro/erpdataio-core-bundle": "self.version"

@@ -20,8 +20,9 @@ use ERPDataIO\ERPDataIOCoreBundle\Services\ERPDataIOLogger;
 /**
  * Tests ERPDataIO\ERPDataIOCoreBundle\Services\ERPDataIOLogger class
  */
-class ERPDataIOLoggerTest extends \PHPUnit_Framework_TestCase
+class ERPDataIOLoggerTest extends AbstractERPDataIOTest
 {
+
     /**
      * @var ERPDataIOLogger
      *
@@ -53,8 +54,10 @@ class ERPDataIOLoggerTest extends \PHPUnit_Framework_TestCase
     /**
      * Set up
      */
-    protected function setUp()
+    public function setUp()
     {
+        parent::setUp();
+
         $this->logger = $this
             ->getMockBuilder('Psr\Log\LoggerInterface')
             ->disableOriginalConstructor()
