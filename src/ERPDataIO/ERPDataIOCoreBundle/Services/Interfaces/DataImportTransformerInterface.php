@@ -19,11 +19,9 @@ namespace ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces;
 interface DataImportTransformerInterface
 {
     /**
-     * Set raw data to transform
-     *
-     * @param string $data Raw data (JSON, XML or plain text)
+     * Load raw data from files
      */
-    public function setData($data);
+    public function loadData();
 
     /**
      * Get a collection of Category objects from raw data

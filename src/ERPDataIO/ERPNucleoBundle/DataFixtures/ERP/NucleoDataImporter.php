@@ -18,7 +18,7 @@ use ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP\AbstractDataImporter;
 /**
  * Nucleo ERPDataIO Bundle
  */
-class NuecloDataImporter extends AbstractDataImporter
+class NucleoDataImporter extends AbstractDataImporter
 {
     /**
      * Get a collection of Category objects from raw data

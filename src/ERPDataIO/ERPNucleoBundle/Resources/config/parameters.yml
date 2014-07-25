@@ -1,0 +1,4 @@
+parameters:
+    nucleo.categories.file: "categories.json"
+    nucleo.products.file: "products.json"
+    nucleo.manufacturers.file: "manufacturers.json"

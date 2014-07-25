@@ -62,6 +62,11 @@ class ImportDataCommand extends ContainerAwareCommand
             );
         }
 
+        $dataImporterManager = $this->getContainer()->get('erpdataio.importer');
+        foreach ($fixtures as $fixture) {
+            $dataImporterManager->loadData($fixture);
+        }
+
         $output->writeln('OK');
     }
 }

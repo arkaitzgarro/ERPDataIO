@@ -8,3 +8,8 @@ services:
             level: %erpdataio.logger.level%
         tags:
             - { name: monolog.logger, channel: 'erpdataio' }
+
+    erpdataio.importer:
+        class: %erpdataio.manager.importer.class%
+        arguments:
+            manager: "@doctrine.orm.entity_manager"

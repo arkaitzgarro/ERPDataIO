@@ -14,6 +14,7 @@
 namespace ERPDataIO\ERPDataIOCoreBundle\Services;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInterface;
 
 /**
  * Data import manager
@@ -33,5 +34,10 @@ class DataImportManager
     public function __construct(ObjectManager $manager)
     {
         $this->em = $manager;
+    }
+
+    public function loadData(DataImportTransformerInterface $fixture)
+    {
+        $fixture->loadData();
     }
 }

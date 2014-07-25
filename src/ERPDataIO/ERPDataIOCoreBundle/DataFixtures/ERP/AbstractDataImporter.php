@@ -27,15 +27,11 @@ abstract class AbstractDataImporter implements DataImportTransformerInterface
     private $data;
 
     /**
-     * Set raw data to transform
-     *
-     * @param string $data Raw data (JSON, XML or plain text)
+     * Load raw data from files
      */
-    public function setData($data)
+    public function loadData()
     {
-        $this->data = $data;
-
-        return $data;
+        $this->data = 'DATA';
     }
 
 }
