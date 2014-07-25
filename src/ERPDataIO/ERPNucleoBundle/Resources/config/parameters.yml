@@ -1,4 +1,4 @@
 parameters:
-    nucleo.categories.file: "categories.json"
-    nucleo.products.file: "products.json"
-    nucleo.manufacturers.file: "manufacturers.json"
+    erp.nucleo.categories.file: "categories.json"
+    erp.nucleo.products.file: "products.json"
+    erp.ucleo.manufacturers.file: "manufacturers.json"

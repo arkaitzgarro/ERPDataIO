@@ -14,6 +14,7 @@
 
 namespace ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInterface;
 
 /**
@@ -22,16 +23,39 @@ use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInter
 abstract class AbstractDataImporter implements DataImportTransformerInterface
 {
     /**
+     * @var ContainerInterface
+     */
+    private $container;
+
+    /**
      * RAW data
      */
     private $data;
+
+    /**
+     *
+     */
+    public function setContainer(ContainerInterface $container)
+    {
+        $this->container = $container;
+
+        return $this;
+    }
+
+    /**
+     *
+     */
+    public function getContainer()
+    {
+        return $this->container;
+    }
 
     /**
      * Load raw data from files
      */
     public function loadData()
     {
-        $this->data = 'DATA';
+        $categoriesPath = $this->getCategoriesFile();
     }
 
 }

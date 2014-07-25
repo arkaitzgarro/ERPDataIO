@@ -20,6 +20,12 @@ use ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP\AbstractDataImporter;
  */
 class NucleoDataImporter extends AbstractDataImporter
 {
+    public function getCategoriesFile()
+    {
+        return $this->getContainer()->getParameter('erp.nucleo.base_path').'/'.
+               $this->getContainer()->getParameter('erp.nucleo.categories.file');
+    }
+
     /**
      * Get a collection of Category objects from raw data
      *

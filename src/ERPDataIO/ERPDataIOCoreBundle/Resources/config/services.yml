@@ -12,4 +12,5 @@ services:
     erpdataio.importer:
         class: %erpdataio.manager.importer.class%
         arguments:
-            manager: "@doctrine.orm.entity_manager"
+            manager: @doctrine.orm.entity_manager
+            container: @service_container

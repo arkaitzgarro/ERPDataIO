@@ -14,6 +14,7 @@
 namespace ERPDataIO\ERPDataIOCoreBundle\Services;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInterface;
 
 /**
@@ -22,22 +23,29 @@ use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInter
 class DataImportManager
 {
     /**
-     * Entity manager
+     * @var ObjectManager
      */
     private $em;
+
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
 
     /**
      * Construct method
      *
      * @param Doctrine\Common\Persistence\ObjectManager $manager
      */
-    public function __construct(ObjectManager $manager)
+    public function __construct(ObjectManager $manager, ContainerInterface $container)
     {
         $this->em = $manager;
+        $this->container = $container;
     }
 
     public function loadData(DataImportTransformerInterface $fixture)
     {
+        $fixture->setContainer($this->container);
         $fixture->loadData();
     }
 }

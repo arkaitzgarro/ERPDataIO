@@ -34,7 +34,7 @@ class ERPNucleoExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('erpnucleo.base_path', $config['base_path']);
+        $container->setParameter('erp.nucleo.base_path', $config['base_path']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('parameters.yml');
