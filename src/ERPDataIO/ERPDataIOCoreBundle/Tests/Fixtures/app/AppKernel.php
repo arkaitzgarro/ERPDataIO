@@ -10,6 +10,7 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new ERPDataIO\ERPDataIOCoreBundle\ERPDataIOCoreBundle(),
+            new ERPDataIO\ERPNucleoBundle\ERPNucleoBundle()
         );
     }
 

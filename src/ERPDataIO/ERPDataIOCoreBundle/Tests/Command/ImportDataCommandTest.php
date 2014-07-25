@@ -38,8 +38,21 @@ class ImportDataCommandTest extends WebTestCase
 
         $command = $application->find('erp:import');
         $commandTester = new CommandTester($command);
+
+        $helper = $command->getHelper('question');
+        $helper->setInputStream($this->getInputStream('Y\n'));
+
         $commandTester->execute(array());
 
         $this->assertRegExp('/OK/', $commandTester->getDisplay());
+    }
+
+    protected function getInputStream($input)
+    {
+        $stream = fopen('php://memory', 'r+', false);
+        fputs($stream, $input);
+        rewind($stream);
+
+        return $stream;
     }
 }

@@ -30,19 +30,19 @@ interface DataImportTransformerInterface
      *
      * @return ArrayCollection
      */
-    public function getCategories();
+    public function getCategories($rawCategories);
 
     /**
      * Get a collection of Manufacturer objects from raw data
      *
      * @return ArrayCollection
      */
-    public function getManufacturers();
+    public function getManufacturers($rawManufacturers);
 
     /**
      * Get a collection of Product objects from raw data
      *
      * @return ArrayCollection
      */
-    public function getProducts();
+    public function getProducts($rawProducts);
 }
