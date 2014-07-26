@@ -10,6 +10,9 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Elcodi\CoreBundle\ElcodiCoreBundle(),
+            new Elcodi\ProductBundle\ElcodiProductBundle(),
             new ERPDataIO\ERPDataIOCoreBundle\ERPDataIOCoreBundle(),
             new ERPDataIO\ERPNucleoBundle\ERPNucleoBundle()
         );

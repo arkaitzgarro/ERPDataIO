@@ -7,3 +7,8 @@ framework:
     default_locale:  en
     translator:      { fallback: en }
     profiler:        { only_exceptions: false }
+
+doctrine_cache:
+   providers:
+      elcodi:
+         type: array

@@ -14,6 +14,7 @@
 namespace ERPDataIO\ERPNucleoBundle;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Elcodi\ProductBundle\Entity\Category;
 use ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP\AbstractDataImporter;
 
 /**
@@ -28,7 +29,7 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getBasePath()
     {
-        return $this->getContainer()->getParameter('erp.nucleo.base_path').DIRECTORY_SEPARATOR;
+        return $this->getContainer()->getParameter('erp.nucleo.base_path');
     }
 
     /**
@@ -68,6 +69,14 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getCategories($rawCategories)
     {
+        $data = json_decode($rawCategories);
+
+        foreach ($data->rows as $key => $cat) {
+            $category = $this->getContainer()->get('elcodi.factory.category')->create();
+            $category->setName($cat->descrip);
+            $category->setName($cat->descrip);
+        }
+
         return new ArrayCollection();
     }
 
@@ -78,7 +87,7 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getManufacturers($rawManufacturers)
     {
-
+        return new ArrayCollection();
     }
 
     /**
@@ -88,6 +97,6 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getProducts($rawProducts)
     {
-
+        return new ArrayCollection();
     }
 }
