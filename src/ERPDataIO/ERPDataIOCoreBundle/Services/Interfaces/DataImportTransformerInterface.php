@@ -24,6 +24,26 @@ interface DataImportTransformerInterface
     public function loadData();
 
     /**
+     * Get base directory path, where files to import are located
+     */
+    public function getBasePath();
+
+    /**
+     * Get categories file name
+     */
+    public function getCategoriesFile();
+
+    /**
+     * Get manufacturers file name
+     */
+    public function getManufacturersFile();
+
+    /**
+     * Get products file name
+     */
+    public function getProductsFile();
+
+    /**
      * Get a collection of Category objects from raw data
      *
      * @return ArrayCollection
