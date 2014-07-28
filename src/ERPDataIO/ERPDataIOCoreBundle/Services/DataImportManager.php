@@ -53,6 +53,10 @@ class DataImportManager
 
     public function saveCategories(ArrayCollection $categories)
     {
+        foreach ($categories as $cat) {
+            $this->em->persist($cat);
+        }
 
+        $this->em->flush();
     }
 }

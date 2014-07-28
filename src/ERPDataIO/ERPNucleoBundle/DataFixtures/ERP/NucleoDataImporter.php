@@ -69,15 +69,15 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getCategories($rawCategories)
     {
+        $categories = new ArrayCollection();
         $data = json_decode($rawCategories);
 
         foreach ($data->rows as $key => $cat) {
             $category = $this->getContainer()->get('elcodi.factory.category')->create();
             $category->setName($cat->descrip);
-            $category->setName($cat->descrip);
         }
 
-        return new ArrayCollection();
+        return $categories;
     }
 
     /**
