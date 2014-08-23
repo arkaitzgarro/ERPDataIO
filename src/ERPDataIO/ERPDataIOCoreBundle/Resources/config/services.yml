@@ -9,6 +9,11 @@ services:
         tags:
             - { name: monolog.logger, channel: 'erpdataio' }
 
+    erpdataio.loader:
+        class: %erpdataio.manager.loader.class%
+        arguments:
+            container: @service_container
+
     erpdataio.importer:
         class: %erpdataio.manager.importer.class%
         arguments:

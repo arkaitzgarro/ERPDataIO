@@ -13,6 +13,8 @@
 
 namespace ERPDataIO\ERPNucleoBundle;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Elcodi\ProductBundle\Entity\Category;
 use ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP\AbstractDataImporter;
 
 /**
@@ -20,10 +22,44 @@ use ERPDataIO\ERPDataIOCoreBundle\DataFixtures\ERP\AbstractDataImporter;
  */
 class NucleoDataImporter extends AbstractDataImporter
 {
+    /**
+     * Get base path for data files
+     *
+     * @return String Base path
+     */
+    public function getBasePath()
+    {
+        return $this->getContainer()->getParameter('erp.nucleo.base_path');
+    }
+
+    /**
+     * Get path for categories file
+     *
+     * @return String Categories file path
+     */
     public function getCategoriesFile()
     {
-        return $this->getContainer()->getParameter('erp.nucleo.base_path').'/'.
-               $this->getContainer()->getParameter('erp.nucleo.categories.file');
+        return $this->getContainer()->getParameter('erp.nucleo.categories.file');
+    }
+
+    /**
+     * Get path for manufacturers file
+     *
+     * @return String Manufacturers file path
+     */
+    public function getManufacturersFile()
+    {
+        return $this->getContainer()->getParameter('erp.nucleo.manufacturers.file');
+    }
+
+    /**
+     * Get path for products file
+     *
+     * @return String Products file path
+     */
+    public function getProductsFile()
+    {
+        return $this->getContainer()->getParameter('erp.nucleo.products.file');
     }
 
     /**
@@ -31,8 +67,17 @@ class NucleoDataImporter extends AbstractDataImporter
      *
      * @return ArrayCollection
      */
-    public function getCategories($rawCategories){
+    public function getCategories($rawCategories)
+    {
+        $categories = new ArrayCollection();
+        $data = json_decode($rawCategories);
 
+        foreach ($data->rows as $key => $cat) {
+            $category = $this->getContainer()->get('elcodi.factory.category')->create();
+            $category->setName($cat->descrip);
+        }
+
+        return $categories;
     }
 
     /**
@@ -42,7 +87,7 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getManufacturers($rawManufacturers)
     {
-
+        return new ArrayCollection();
     }
 
     /**
@@ -52,6 +97,6 @@ class NucleoDataImporter extends AbstractDataImporter
      */
     public function getProducts($rawProducts)
     {
-
+        return new ArrayCollection();
     }
 }

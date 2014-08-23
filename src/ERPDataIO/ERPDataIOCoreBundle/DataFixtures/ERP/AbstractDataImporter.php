@@ -55,7 +55,11 @@ abstract class AbstractDataImporter implements DataImportTransformerInterface
      */
     public function loadData()
     {
-        $categoriesPath = $this->getCategoriesFile();
+        $loadManager = $this->container->get('erpdataio.loader');
+        $importManager = $this->container->get('erpdataio.importer');
+
+        $categoriesContent = $loadManager->loadFile($this->getBasePath(), $this->getCategoriesFile());
+        $importManager->saveCategories($this->getCategories($categoriesContent));
     }
 
 }

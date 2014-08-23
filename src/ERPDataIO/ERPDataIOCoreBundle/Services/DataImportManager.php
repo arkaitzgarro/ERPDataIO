@@ -14,6 +14,7 @@
 namespace ERPDataIO\ERPDataIOCoreBundle\Services;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use ERPDataIO\ERPDataIOCoreBundle\Services\Interfaces\DataImportTransformerInterface;
 
@@ -36,6 +37,7 @@ class DataImportManager
      * Construct method
      *
      * @param Doctrine\Common\Persistence\ObjectManager $manager
+     * @param Symfony\Component\DependencyInjection\ContainerInterface $container
      */
     public function __construct(ObjectManager $manager, ContainerInterface $container)
     {
@@ -47,5 +49,14 @@ class DataImportManager
     {
         $fixture->setContainer($this->container);
         $fixture->loadData();
+    }
+
+    public function saveCategories(ArrayCollection $categories)
+    {
+        foreach ($categories as $cat) {
+            $this->em->persist($cat);
+        }
+
+        $this->em->flush();
     }
 }

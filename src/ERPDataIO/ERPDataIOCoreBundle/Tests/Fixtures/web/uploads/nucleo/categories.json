@@ -1,0 +1,72 @@
+{
+    "rows": [
+        {
+            "codigo": "001",
+            "descrip": "BOINA ANIVERSARIO"
+        },
+        {
+            "codigo": "002",
+            "descrip": "BOINA AÑO 1858"
+        },
+        {
+            "codigo": "003",
+            "descrip": "BOINA SUPER LUJO"
+        },
+        {
+            "codigo": "004",
+            "descrip": "BOINA TXAPELUDUN"
+        },
+        {
+            "codigo": "005",
+            "descrip": "BOINA.TUPIDA"
+        },
+        {
+            "codigo": "006",
+            "descrip": "BOINA FINA"
+        },
+        {
+            "codigo": "008",
+            "descrip": "BOINA %DOUBLEQUOTE%F%DOUBLEQUOTE%"
+        },
+        {
+            "codigo": "009",
+            "descrip": "BOINA %DOUBLEQUOTE%M%DOUBLEQUOTE%"
+        },
+        {
+            "codigo": "010",
+            "descrip": "BOINA BASICA"
+        },
+        {
+            "codigo": "011",
+            "descrip": "BOINA MINI"
+        },
+        {
+            "codigo": "012",
+            "descrip": "GORRO LLUVIA"
+        },
+        {
+            "codigo": "013",
+            "descrip": "Visera verano"
+        },
+        {
+            "codigo": "014",
+            "descrip": "Visera invierno"
+        },
+        {
+            "codigo": "015",
+            "descrip": "BOINA"
+        },
+        {
+            "codigo": "016",
+            "descrip": "BOINA-GORRO"
+        },
+        {
+            "codigo": "017",
+            "descrip": "VISERA"
+        },
+        {
+            "codigo": "018",
+            "descrip": "GORRO"
+        }
+    ]
+}

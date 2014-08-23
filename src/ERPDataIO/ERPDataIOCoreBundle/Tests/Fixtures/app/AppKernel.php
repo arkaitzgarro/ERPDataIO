@@ -10,6 +10,9 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Elcodi\CoreBundle\ElcodiCoreBundle(),
+            new Elcodi\ProductBundle\ElcodiProductBundle(),
             new ERPDataIO\ERPDataIOCoreBundle\ERPDataIOCoreBundle(),
             new ERPDataIO\ERPNucleoBundle\ERPNucleoBundle()
         );
@@ -17,6 +20,7 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+        $loader->load(__DIR__.'/config/parameters.yml');
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
 
